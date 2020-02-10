@@ -45,4 +45,3 @@ do
         fi
     done
 done
-setprop persist.vendor.hvdcp_opti.start 1

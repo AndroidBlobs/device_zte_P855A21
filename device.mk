@@ -139,7 +139,6 @@ PRODUCT_PACKAGES += \
     init.qti.ims.sh \
     init.qti.manifest_sku.sh \
     init.qti.qseecomd.sh \
-    init.vendor.sh \
     qca6234-service.sh \
     init.fingerprint.gf95xx.rc \
     init.msm.usb.configfs.rc \

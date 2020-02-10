@@ -23,19 +23,6 @@ on late-init
     write /sys/module/zte_misc/parameters/screen_on 1
 
 on charger
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-
-    #mount cache
-    wait /dev/block/bootdevice/by-name/cache
-    mount ext4 /dev/block/bootdevice/by-name/cache /cache noatime nosuid nodev barrier=1
-
-    #mount persist
-    mkdir /mnt/vendor/persist 0755 system system
-
-    wait /dev/block/bootdevice/by-name/persist
-    mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist noatime nosuid nodev barrier=1
-
     class_start brd_charger
 
 on boot
@@ -118,14 +105,6 @@ on boot
     chmod 0664 /sys/class/leds/aw9523b_led/brightness
     chown system system /sys/module/msm_thermal/freq_wmark/app_max_freq_limit
 
-    # add for cpuset cgroup
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-3,5-7
-    write /dev/cpuset/audio-app/cpus 0-3,5-7
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/restricted/cpus 0-3
-
     # add ssx1207 authority
     chown system system /dev/ssx1207
     chmod 0660 /dev/ssx1207
@@ -134,16 +113,8 @@ on boot
     # add for touch
     chown system system /proc/touchscreen/smart_cover
     chmod 0644 /proc/touchscreen/smart_cover
-    chown system system /proc/touchscreen/glove_mode
-    chmod 0644 /proc/touchscreen/glove_mode
     chown system system /proc/touchscreen/tp_switch
     chmod 0666 /proc/touchscreen/tp_switch
-    chown system system /proc/touchscreen/single_tap
-    chmod 0666 /proc/touchscreen/single_tap
-    chown system system /sys/bus/platform/devices/synaptics_tcm.0/uevent
-    chown 0666 /sys/bus/platform/devices/synaptics_tcm.0/uevent
-    chmod 0664 /proc/touchscreen/screen_state_interface
-    chown system system /proc/touchscreen/screen_state_interface
     # add for touch self-test
     chown system system /sys/devices/virtual/tsp_fw/touchscreen/tpd_test_cmd
     chown system system /sys/devices/virtual/tsp_fw/touchscreen/tpd_test_filename
@@ -165,7 +136,6 @@ on boot
     chown system system /proc/sar/disable_sar_in_call
     chmod 0644 /proc/sar/disable_sar_in_call
     chown system system /sys/bus/i2c/drivers/sx9500-input/5-0028/status
-    chown system system /sys/bus/i2c/drivers/sx932x/5-0028/status
     #
     # Support for FTM by ZTE_BOOT
     #
@@ -262,8 +232,6 @@ on mmi && property:ro.bootmode=ffbm-02
     chmod 0666 /dev/i2c-8
     chown system system /dev/i2c-5
     chmod 0666 /dev/i2c-5
-    chown system system /dev/i2c-2
-    chmod 0666 /dev/i2c-2
 
 #
 # zte: adb over wifi
@@ -285,21 +253,10 @@ on property:persist.odm.sys.dlctrl=0
 on property:persist.odm.sys.dlctrl=1
      write /sys/module/msm_poweroff/parameters/download_mode 1
 
-on property:odm.force_warm_reset=0
-    write /sys/module/msm_poweroff/parameters/restart_type 0
-
-on property:odm.force_warm_reset=1
-    write /sys/module/msm_poweroff/parameters/restart_type 1
-
 service run_athdiag /system/bin/sh /system/etc/wifi/run_athdiag.sh
     oneshot
     disabled
 
-service vendor-sh /vendor/bin/init.vendor.sh
-    class core
-    user root
-    group root system
-    oneshot
 
 #
 # qsee and tz log
@@ -414,18 +371,18 @@ on property:net.tcp.windowscaling=0
 # ZTE_YJ_20130221 end
 
 #Add by wf for DoCoMo begin
-on property:persist.odm.sys.qxdm.enable=1
-    start mdlog_start
+on property:persist.sys.qxdm.enable=1
+    start diag_mdlog_start
 
-on property:persist.odm.sys.qxdm.enable=0
-    start mdlog_stop
+on property:persist.sys.qxdm.enable=0
+    start diag_mdlog_stop
 
-service mdlog_start /system/bin/sh  /system/bin/diag_mdlog_start.sh
+service diag_mdlog_start /system/bin/sh  /system/bin/diag_mdlog_start.sh
     user root
     disabled
     oneshot
 
-service mdlog_stop /system/bin/sh  /system/bin/diag_mdlog_stop.sh
+service diag_mdlog_stop /system/bin/sh  /system/bin/diag_mdlog_stop.sh
     user root
     disabled
     oneshot
@@ -467,20 +424,6 @@ on property:sys.demochargingpolicy.protect=1
 on property:sys.demochargingpolicy.protect=0
     write /sys/module/zte_misc/parameters/demo_charging_policy 0
 
-on property:persist.sys.keeppower.anyway=1
-    setprop persist.sys.overtemp.enable 0
-    write /sys/module/zte_misc/parameters/demo_charging_policy 1
-    write /sys/module/zte_misc/parameters/policy_lowtemp_en 0
-on property:persist.sys.keeppower.anyway=0
-    setprop persist.sys.overtemp.enable 1
-    write /sys/module/zte_misc/parameters/demo_charging_policy 0
-    write /sys/module/zte_misc/parameters/policy_lowtemp_en 1
-
-on property:persist.sys.expiredchargingpolicy.protect=1
-    write /sys/module/zte_misc/parameters/expired_policy_en 1
-on property:persist.sys.expiredchargingpolicy.protect=0
-    write /sys/module/zte_misc/parameters/expired_policy_en 0
-
 on property:sys.driverchargingpolicy.protect=1
     write /sys/module/zte_misc/parameters/driver_charging_policy 1
 on property:sys.driverchargingpolicy.protect=0
@@ -503,13 +446,3 @@ service brd_charger /vendor/bin/battery_record_daemon charger
     user system
     group system root
     oneshot
-
-service random_service /system/bin/sh  /system/etc/zte_random_shell_z.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:random_service:s0
-
-on property:persist.odm.sys.truerandom=1
-    start random_service

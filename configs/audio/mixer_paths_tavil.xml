@@ -661,14 +661,6 @@
         <path name="deep-buffer-playback speaker" />
     </path>
 
-    <path name="deep-buffer-playback handset-hac">
-        <path name="deep-buffer-playback speaker" />
-    </path>
-
-    <path name="deep-buffer-playback voice-tty-hco-handset">
-        <path name="deep-buffer-playback speaker" />
-    </path>
-
     <path name="deep-buffer-playback display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia1" value="1" />
     </path>
@@ -744,14 +736,6 @@
     </path>
 
     <path name="low-latency-playback voice-handset">
-        <path name="low-latency-playback speaker" />
-    </path>
-
-    <path name="low-latency-playback handset-hac">
-        <path name="low-latency-playback speaker" />
-    </path>
-
-    <path name="low-latency-playback voice-tty-hco-handset">
         <path name="low-latency-playback speaker" />
     </path>
 
@@ -837,14 +821,6 @@
         <path name="audio-ull-playback speaker" />
     </path>
 
-    <path name="audio-ull-playback handset-hac">
-        <path name="audio-ull-playback speaker" />
-    </path>
-
-    <path name="audio-ull-playback voice-tty-hco-handset">
-        <path name="audio-ull-playback speaker" />
-    </path>
-
     <path name="audio-ull-playback headphones">
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia8" value="1" />
     </path>
@@ -923,14 +899,6 @@
     </path>
 
     <path name="compress-offload-playback voice-handset">
-        <path name="compress-offload-playback speaker" />
-    </path>
-
-    <path name="compress-offload-playback handset-hac">
-        <path name="compress-offload-playback speaker" />
-    </path>
-
-    <path name="compress-offload-playback voice-tty-hco-handset">
         <path name="compress-offload-playback speaker" />
     </path>
 
@@ -1020,14 +988,6 @@
         <path name="compress-offload-playback2 speaker" />
     </path>
 
-    <path name="compress-offload-playback2 handset-hac">
-        <path name="compress-offload-playback2 speaker" />
-    </path>
-
-    <path name="compress-offload-playback2 voice-tty-hco-handset">
-        <path name="compress-offload-playback2 speaker" />
-    </path>
-
     <path name="compress-offload-playback2 display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia7" value="1" />
     </path>
@@ -1110,14 +1070,6 @@
         <path name="compress-offload-playback3 speaker" />
     </path>
 
-    <path name="compress-offload-playback3 handset-hac">
-        <path name="compress-offload-playback3 speaker" />
-    </path>
-
-    <path name="compress-offload-playback3 voice-tty-hco-handset">
-        <path name="compress-offload-playback3 speaker" />
-    </path>
-
     <path name="compress-offload-playback3 display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia10" value="1" />
     </path>
@@ -1197,14 +1149,6 @@
     </path>
 
     <path name="compress-offload-playback4 voice-handset">
-        <path name="compress-offload-playback4 speaker" />
-    </path>
-
-    <path name="compress-offload-playback4 handset-hac">
-        <path name="compress-offload-playback4 speaker" />
-    </path>
-
-    <path name="compress-offload-playback4 voice-tty-hco-handset">
         <path name="compress-offload-playback4 speaker" />
     </path>
 
@@ -1291,14 +1235,6 @@
         <path name="compress-offload-playback5 speaker" />
     </path>
 
-    <path name="compress-offload-playback5 handset-hac">
-        <path name="compress-offload-playback5 speaker" />
-    </path>
-
-    <path name="compress-offload-playback5 voice-tty-hco-handset">
-        <path name="compress-offload-playback5 speaker" />
-    </path>
-
     <path name="compress-offload-playback5 display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia12" value="1" />
     </path>
@@ -1378,14 +1314,6 @@
     </path>
 
     <path name="compress-offload-playback6 voice-handset">
-        <path name="compress-offload-playback6 speaker" />
-    </path>
-
-    <path name="compress-offload-playback6 handset-hac">
-        <path name="compress-offload-playback6 speaker" />
-    </path>
-
-    <path name="compress-offload-playback6 voice-tty-hco-handset">
         <path name="compress-offload-playback6 speaker" />
     </path>
 
@@ -1471,14 +1399,6 @@
         <path name="compress-offload-playback7 speaker" />
     </path>
 
-    <path name="compress-offload-playback7 handset-hac">
-        <path name="compress-offload-playback7 speaker" />
-    </path>
-
-    <path name="compress-offload-playback7 voice-tty-hco-handset">
-        <path name="compress-offload-playback7 speaker" />
-    </path>
-
     <path name="compress-offload-playback7 display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia14" value="1" />
     </path>
@@ -1561,14 +1481,6 @@
         <path name="compress-offload-playback8 speaker" />
     </path>
 
-    <path name="compress-offload-playback8 handset-hac">
-        <path name="compress-offload-playback8 speaker" />
-    </path>
-
-    <path name="compress-offload-playback8 voice-tty-hco-handset">
-        <path name="compress-offload-playback8 speaker" />
-    </path>
-
     <path name="compress-offload-playback8 display-port">
         <ctl name="DISPLAY_PORT Mixer MultiMedia15" value="1" />
     </path>
@@ -1648,14 +1560,6 @@
     </path>
 
     <path name="compress-offload-playback9 voice-handset">
-        <path name="compress-offload-playback9 speaker" />
-    </path>
-
-    <path name="compress-offload-playback9 handset-hac">
-        <path name="compress-offload-playback9 speaker" />
-    </path>
-
-    <path name="compress-offload-playback9 voice-tty-hco-handset">
         <path name="compress-offload-playback9 speaker" />
     </path>
 
@@ -1983,14 +1887,6 @@
         <path name="compress-voip-call voice-handset" />
     </path>
 
-    <path name="compress-voip-call handset-hac">
-        <path name="compress-voip-call voice-handset" />
-    </path>
-
-    <path name="compress-voip-call voice-tty-hco-handset">
-        <path name="compress-voip-call voice-handset" />
-    </path>
-
     <path name="compress-voip-call bt-a2dp">
         <ctl name="SLIM_7_RX_Voice Mixer Voip" value="1" />
         <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="1" />
@@ -2000,6 +1896,7 @@
         <ctl name="SLIM_6_RX_Voice Mixer Voip" value="1" />
         <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="1" />
     </path>
+
 
     <path name="compress-voip-call bt-sco">
         <ctl name="SLIM_7_RX_Voice Mixer Voip" value="1" />
@@ -2046,14 +1943,6 @@
     </path>
 
     <path name="voicemmode1-call handset">
-        <path name="voicemmode1-call voice-handset" />
-    </path>
-
-    <path name="voicemmode1-call handset-hac">
-        <path name="voicemmode1-call voice-handset" />
-    </path>
-
-    <path name="voicemmode1-call voice-tty-hco-handset">
         <path name="voicemmode1-call voice-handset" />
     </path>
 
@@ -2120,14 +2009,6 @@
         <path name="voicemmode2-call voice-handset" />
     </path>
 
-    <path name="voicemmode2-call handset-hac">
-        <path name="voicemmode2-call voice-handset" />
-    </path>
-
-    <path name="voicemmode2-call voice-tty-hco-handset">
-        <path name="voicemmode2-call voice-handset" />
-    </path>
-
     <path name="voicemmode2-call headphones">
         <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
@@ -2186,13 +2067,6 @@
     </path>
 
     <path name="audio-playback-voip voice-handset">
-        <path name="audio-playback-voip speaker" />
-    </path>
-    <path name="audio-playback-voip handset-hac">
-        <path name="audio-playback-voip speaker" />
-    </path>
-
-    <path name="audio-playback-voip voice-tty-hco-handset">
         <path name="audio-playback-voip speaker" />
     </path>
 
@@ -3218,7 +3092,7 @@
 
     <path name="voice-tty-full-headset-mic">
         <path name="amic2" />
-        <ctl name="ADC2 Volume" value="6" />
+        <ctl name="ADC2 Volume" value="0" />
     </path>
 
     <path name="voice-tty-hco-headset-mic">

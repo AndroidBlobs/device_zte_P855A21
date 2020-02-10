@@ -150,8 +150,6 @@
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="voice-speaker" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_HANDSET" backend="handset" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_HANDSET" backend="voice-handset" interface="QUAT_MI2S_RX"/>
-        <device name="SND_DEVICE_OUT_HAC" backend="handset-hac" interface="QUAT_MI2S_RX"/>
-        <device name="SND_DEVICE_OUT_VOICE_TTY_HCO_HANDSET" backend="voice-tty-hco-handset" interface="QUAT_MI2S_RX"/>
     </backend_names>
     <!-- below values are for ref purpose to OEM, doesn't contain actual hardware info on MTP -->
     <microphone_characteristics>

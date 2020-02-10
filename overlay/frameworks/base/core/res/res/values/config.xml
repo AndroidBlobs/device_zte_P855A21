@@ -28,7 +28,7 @@
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
-     <bool name="config_automatic_brightness_available">false</bool>
+     <bool name="config_automatic_brightness_available">true</bool>
 
     <!-- Boolean indicating if current platform supports HFP inband ringing -->
      <bool name="config_bluetooth_hfp_inband_ringing_support">false</bool>
@@ -97,7 +97,7 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content).
     -->
-     <bool name="config_enableWifiDisplay">false</bool>
+     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
@@ -344,12 +344,6 @@
          Note that a physical cutout should be configured in pixels for the best results.
     -->
      <string name="config_mainBuiltInDisplayCutout">M -84,0 L -84,74 L 84,74 L 84,0 Z</string>
-
-    <!-- MMS user agent string -->
-     <string name="config_mms_user_agent">ZTE_A2020N2_Pro/MMS/ZTE-Android-MMS-V2.0</string>
-
-    <!-- MMS user agent prolfile url -->
-     <string name="config_mms_user_agent_profile_url">https://res-www.zte.com.cn/bigmediafiles/device/uaprof/ZTE_A2020N2_Pro.xml</string>
 
     <!--  Define Google play service package for FRP-->
      <string name="config_persistentDataPackageName">com.google.android.gms</string>

@@ -1,10 +1,9 @@
 <!--
     Input:
         vendor_framework_compatibility_matrix.xml
-        compatibility_matrix.xml
-        ifaa_framework_comp_matrix.xml
         gf95xx_framework_comp_matrix.xml
-        compatibility_matrix_dual_sim.xml
+        compatibility_matrix.xml
+        compatibility_matrix_single_sim.xml
 -->
 <compatibility-matrix version="1.0" type="framework">
     <hal format="hidl" optional="true">
@@ -370,7 +369,7 @@
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.qtiradio</name>
         <version>1.0</version>
-        <version>2.0-3</version>
+        <version>2.0-2</version>
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
@@ -537,10 +536,10 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.zte.fingerprint.ifaahidl</name>
+        <name>vendor.silead.hardware.fingerprintext</name>
         <version>1.0</version>
         <interface>
-            <name>IIfaaDaemon</name>
+            <name>ISileadFingerprint</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -550,7 +549,6 @@
         <interface>
             <name>IVendorRadio</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">

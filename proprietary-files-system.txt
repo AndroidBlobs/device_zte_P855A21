@@ -10,7 +10,6 @@
 -lib64/libantradio.so
 -lib64/vendor.qti.hardware.fm@1.0.so
 -priv-app/CNEService/CNEService.apk
--priv-app/SoterService/SoterService.apk
 -priv-app/WfdService/WfdService.apk
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 -priv-app/ims/ims.apk

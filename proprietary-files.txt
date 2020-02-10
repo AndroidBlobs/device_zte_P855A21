@@ -16,7 +16,6 @@ vendor/lib64/libsdsprpc.so
 
 # ADSP-Modules
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
-vendor/lib/rfsa/adsp/Elevoc_ecns_capi2.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libcamera_nn_skel.so
 vendor/lib/rfsa/adsp/libcvpdsp_skel.so
@@ -512,7 +511,6 @@ vendor/etc/camera/beautiful_fn/fn_default.xml
 vendor/etc/camera/camxoverridesettings.txt
 vendor/etc/camera/color_filters_glinfo.bin
 vendor/etc/camera/color_filters_glinfo64.bin
-vendor/etc/camera/eisoverridesettings.txt
 vendor/etc/camera/iAE.bin
 vendor/etc/camera/LDC_packdata_ZTE_project6161_07F.dat
 vendor/etc/camera/model_128.dlc
@@ -585,6 +583,7 @@ vendor/lib/libspl.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libtzdrmgenprov.so
+vendor/lib/libtzplayready.so
 vendor/lib64/libbase64.so
 vendor/lib64/libcpion.so
 vendor/lib64/libcppf.so
@@ -596,6 +595,7 @@ vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libops.so
+vendor/lib64/libprdrmdecrypt.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librmp.so
@@ -609,6 +609,7 @@ vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
+vendor/lib64/libtzplayready.so
 
 # DRM-HDCP
 vendor/bin/hdcp1prov
@@ -638,6 +639,10 @@ vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
+vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
+vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
+vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libwvdrmengine.so
@@ -788,7 +793,6 @@ vendor/etc/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.xml
 vendor/etc/qdcm_calib_data_sw43404_amoled_cmd_mode_dsi_boe_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_sw43404_amoled_video_mode_dsi_boe_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_Visionox-RM692A4-1080-2340-6P5Inch.xml
-vendor/etc/qdcm_calib_data_Visionox-RM692A4-nootp240nit-1080-2340-6P5Inch.xml
 vendor/etc/qdcm_calib_data_Visionox-RM692A4-otpt3-1080-2340-6P5Inch.xml
 
 # ESE-Powermanager
@@ -831,13 +835,10 @@ vendor/lib64/vendor.qti.hardware.factory@1.0.so
 # Fingerprint
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
-vendor/bin/hw/vendor.zte.fingerprint.ifaahidl@1.0-service
 vendor/bin/qfp-daemon
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/init/hw/init.fingerprint.gf95xx.rc
-vendor/etc/init/init.fingerprint.alipay.rc
 vendor/etc/init/init_qfp_daemon.rc
-vendor/etc/init/vendor.zte.fingerprint.ifaahidl@1.0-service.rc
 vendor/etc/permissions/qti_fingerprint_interface.xml
 vendor/lib/vendor.qti.hardware.biometrics.face@1.0.so
 vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
@@ -847,8 +848,6 @@ vendor/lib64/libqfp-service.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.biometrics.face@1.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/vendor.zte.fingerprint.ifaahidl@1.0.so
-vendor/overlay/ZtefingerprintsOverlay/ZtefingerprintsOverlay.apk
 
 # Firmware
 vendor/firmware/a225p5_pm4.fw
@@ -1024,8 +1023,6 @@ vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libtinyxml2_1.so
-
-# IFAA
 
 # IPA-Firmware
 vendor/firmware/ipa_fws.b00
@@ -1220,7 +1217,6 @@ vendor/bin/hw/android.hardware.secure_element@1.0-service
 vendor/bin/hw/vendor.qti.secure_element@1.0-service
 vendor/etc/init/android.hardware.nfc@1.1-service.rc
 vendor/etc/init/android.hardware.secure_element@1.0-service.rc
-vendor/etc/init/init.nfc.rc
 vendor/etc/init/vendor.qti.secure_element@1.0-service.rc
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
@@ -1444,7 +1440,6 @@ vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0.so
 vendor/lib/vendor.qti.hardware.radio.qtiradio@2.0.so
 vendor/lib/vendor.qti.hardware.radio.qtiradio@2.1.so
 vendor/lib/vendor.qti.hardware.radio.qtiradio@2.2.so
-vendor/lib/vendor.qti.hardware.radio.qtiradio@2.3.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0.so
@@ -1483,7 +1478,6 @@ vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
@@ -1778,7 +1772,6 @@ vendor/lib64/sensors.ssc.so
 # Soter
 framework/vendor.qti.hardware.soter-V1.0-java.jar
 lib64/vendor.qti.hardware.soter@1.0.so
--priv-app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/bin/soter_client
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
@@ -1794,7 +1787,6 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
--vendor/app/ThermalBridge/ThermalBridge.apk
 vendor/bin/hw/android.hardware.thermal@1.0-service
 vendor/bin/thermal-engine
 vendor/etc/init/android.hardware.thermal@1.0-service.rc
@@ -1815,7 +1807,6 @@ vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
 
 # Touch-improve
--vendor/app/com.qualcomm.qti.improvetouch.service/com.qualcomm.qti.improvetouch.service.apk
 vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
 vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
 vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
@@ -1909,6 +1900,7 @@ vendor/bin/mm-audio-ftm
 vendor/bin/mmid
 vendor/bin/sarproxymgr
 vendor/bin/sec_nvm
+vendor/bin/seemp_healthd
 vendor/bin/spdaemon
 vendor/bin/sscrpcd
 vendor/bin/ssgqmigd
@@ -1924,7 +1916,6 @@ vendor/bin/zte_ftm
 -vendor/app/ConnectionSecurityService/ConnectionSecurityService.apk
 -vendor/app/SSGTelemetryService/SSGTelemetryService.apk
 -vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
-vendor/bin/alikey_client
 vendor/bin/athdiag
 vendor/bin/cplay
 vendor/bin/diag_callback_sample
@@ -1944,7 +1935,6 @@ vendor/bin/hw/vendor.hardware.zte.wifi@1.0-service
 vendor/bin/KmInstallKeybox
 vendor/bin/ks
 vendor/bin/mdm_helper_proxy
-vendor/bin/memtester
 vendor/bin/mm-vidc-omx-test
 vendor/bin/myftm
 vendor/bin/npu_launcher
@@ -1963,7 +1953,6 @@ vendor/bin/StoreKeybox
 vendor/bin/tcpcat
 vendor/bin/test_diag
 vendor/bin/toybox_oem
-vendor/bin/variantid
 vendor/bin/vendordiag
 vendor/bin/vendor_cmd_tool
 vendor/bin/wdsdaemon
@@ -1974,27 +1963,22 @@ vendor/etc/gpfspath_oem_config.xml
 vendor/etc/gpsInterval.xml
 vendor/etc/init/android.hardware.wired_se@1.0-service.rc
 vendor/etc/init/init.mlvm_boot.rc
-vendor/etc/init/init.time_daemon.rc
 vendor/etc/init/manifest_sku.rc
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/remosaic_daemon.rc
 vendor/etc/init/ssdaemon_vendor.rc
 vendor/etc/init/vendor.hardware.zte.wifi@1.0-service.rc
-vendor/etc/init/zcustom.rc
 vendor/etc/init/ztevendordiag.rc
 vendor/etc/lm/AdaptLaunchFeature.xml
 vendor/etc/lm/AppClassifierFeature.xml
-vendor/etc/lm/GameOptimizationFeature.xml
 vendor/etc/permissions/com.zte.hardware.display.camera_notch.xml
 vendor/lib/drm-vts-test-libs/libvtswidevine.so
 vendor/lib/libalSNS.so
-vendor/lib/libcert_parse.wpa_s.so
 vendor/lib/libdiagjni.so
 vendor/lib/libfastcrc.so
 vendor/lib/libFNVfbEngineHAL.so
 vendor/lib/libfnxml.so
-vendor/lib/libhta_controller.so
-vendor/lib/libhta_hexagon_runtime.so
+vendor/lib/libGPMTEEC_vendor.so
 vendor/lib/libiAE_Lib.so
 vendor/lib/libjnigraphics.so
 vendor/lib/libmodemapi_vendor.so
@@ -2002,16 +1986,12 @@ vendor/lib/libnpu.so
 vendor/lib/libopencv_java3.so
 vendor/lib/libopenvx.so
 vendor/lib/libportrait_bokeh.so
+vendor/lib/libprdrmdecrypt.so
 vendor/lib/libqcbor.so
-vendor/lib/libsns_registry_skel.so
 vendor/lib/libstagefright_soft_dtsdec.so
-vendor/lib/libteec.so
 vendor/lib/libvendorcfg_vendor.so
 vendor/lib/libvendorutils.so
-vendor/lib/libwapi_cert.so
-vendor/lib/libwlanapi_vendor.so
 vendor/lib/libZEffectLib.so
-vendor/lib/unnhal-acc-hta.so
 vendor/lib/vendor.zte.hardware.camera.device@3.2.so
 vendor/lib/vendor.zte.hardware.radio@1.0.so
 vendor/lib64/drm-vts-test-libs/libvtswidevine.so
@@ -2024,8 +2004,7 @@ vendor/lib64/libdiagjni.so
 vendor/lib64/libFNVfbEngineHAL.so
 vendor/lib64/libfnxml.so
 vendor/lib64/libgameoptfeature.so
-vendor/lib64/libhta_controller.so
-vendor/lib64/libhta_hexagon_runtime.so
+vendor/lib64/libGPMTEEC_vendor.so
 vendor/lib64/libiAE_Lib.so
 vendor/lib64/libjnigraphics.so
 vendor/lib64/libmdmimgload.so
@@ -2037,18 +2016,13 @@ vendor/lib64/libopenvx.so
 vendor/lib64/libportrait_bokeh.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libreffeature.so
-vendor/lib64/libsns_registry_skel.so
 vendor/lib64/libss-base.so
 vendor/lib64/libss-qti.so
 vendor/lib64/libstagefright_soft_dtsdec.so
-vendor/lib64/libteec.so
 vendor/lib64/libvendorcfg_vendor.so
 vendor/lib64/libvendorutils.so
-vendor/lib64/libwapi_cert.so
-vendor/lib64/libwlanapi_vendor.so
 vendor/lib64/libZEffectLib.so
 vendor/lib64/libzte_variantflag_shared_vendor.so
-vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/vendor.hardware.zte.wifi@1.0.so
 vendor/lib64/vendor.zte.hardware.camera.device@3.2.so
 vendor/lib64/vendor.zte.hardware.radio@1.0.so
